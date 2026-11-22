@@ -41,6 +41,8 @@ function formatSubjectMarks(subjectMarks) {
 const text = (value) => ({ type: 'text', value: String(value) });
 
 function buildWhatsAppComponents(variables) {
+  // ananya_chikbennur_result: {{1}} exam, {{2}} student, {{3}} date, {{4}} subject marks,
+  // {{5}} total, {{6}} max, {{7}} percentage (school name/phone fixed in template)
   if (variables.exam_name !== undefined) {
     return {
       body_1: text(variables.exam_name || ''),
@@ -50,22 +52,23 @@ function buildWhatsAppComponents(variables) {
       body_5: text(variables.total_marks || '—'),
       body_6: text(variables.max_marks || '—'),
       body_7: text(variables.percentage || '—'),
-      body_8: text(variables.school_name || ''),
     };
   }
+  // Fee alert: {{1}} student, {{2}} due date, {{3}} pending amount
+  // (office phone +919986708297 is fixed in the WhatsApp template)
   if (variables.fee_due === true || variables.pending_amount !== undefined) {
     return {
       body_1: text(variables.student_name || ''),
       body_2: text(variables.due_date || 'the earliest'),
       body_3: text(variables.pending_amount || '0'),
-      body_4: text(variables.school_phone || env.schoolPhone),
     };
   }
+  // ananya_chikbennur_attendence: {{1}} student, {{2}} date, {{3}} periods, {{4}} school name
   return {
     body_1: text(variables.student_name || ''),
     body_2: text(variables.date || ''),
     body_3: text(variables.slots || 'Full day'),
-    body_4: text(variables.school_name || ''),
+    body_4: text(variables.school_name || env.schoolName || 'Ananya Public School'),
   };
 }
 
