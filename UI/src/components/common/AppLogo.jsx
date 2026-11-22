@@ -1,6 +1,6 @@
 import { cn } from '../ui/utils';
 
-const LOGO_SRC = '/school-logo.png?v=1';
+const LOGO_SRC = '/school-logo.png?v=2';
 const LOGO_ALT = 'Ananya Public School';
 
 export function AppLogo({ variant = 'sidebar', className, showTitle = true }) {
