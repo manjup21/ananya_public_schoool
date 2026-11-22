@@ -1,0 +1,40 @@
+import { Router } from 'express';
+import { healthRouter } from './health.routes.js';
+import { userRouter } from './user.routes.js';
+import { authRouter } from './auth.routes.js';
+import { lecturerRouter } from './lecturer.routes.js';
+import { classSectionRouter } from './classSection.routes.js';
+import { subjectRouter } from './subject.routes.js';
+import { examTypeRouter } from './examType.routes.js';
+import { studentRouter } from './student.routes.js';
+import { examinationRouter } from './examination.routes.js';
+import { attendancePatternsRouter } from './attendancePatterns.routes.js';
+import { lecturerAttendanceRouter } from './lecturerAttendance.routes.js';
+import { lecturerStudentsRouter } from './lecturerStudents.routes.js';
+import { lecturerAccountRouter } from './lecturerAccount.routes.js';
+import { dashboardRouter } from './dashboard.routes.js';
+import { schoolHolidaysRouter } from './schoolHolidays.routes.js';
+import { feeRouter } from './fee.routes.js';
+import { notificationRouter } from './notification.routes.js';
+
+const router = Router();
+
+router.use('/health', healthRouter);
+router.use('/auth', authRouter);
+router.use('/users', userRouter);
+router.use('/lecturers', lecturerRouter);
+router.use(classSectionRouter);
+router.use(subjectRouter);
+router.use(examTypeRouter);
+router.use(studentRouter);
+router.use(examinationRouter);
+router.use(attendancePatternsRouter);
+router.use(lecturerAttendanceRouter);
+router.use(lecturerStudentsRouter);
+router.use(lecturerAccountRouter);
+router.use(dashboardRouter);
+router.use(schoolHolidaysRouter);
+router.use(feeRouter);
+router.use(notificationRouter);
+
+export { router as apiRouter };

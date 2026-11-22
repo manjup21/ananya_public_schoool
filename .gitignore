@@ -1,0 +1,33 @@
+# Dependencies
+node_modules/
+
+# ERP uploads (copied locally, not committed)
+backend/uploads/
+
+# Build output
+dist/
+dist-ssr/
+
+# Local env files
+.env
+.env.*
+!.env.example
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# Editor / OS
+.DS_Store
+Thumbs.db
+*.swp
+.idea/
+.vscode/*
+!.vscode/extensions.json
+
+# Vite
+*.local
+
+# Local database backups
+backups/

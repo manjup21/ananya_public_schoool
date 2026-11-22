@@ -1,0 +1,10 @@
+-- REQUIRED with the staff 6-digit PIN deploy.
+-- The new login UI only accepts a 6-digit PIN, so existing complex passwords
+-- cannot be typed. Reset every account to the default PIN (app constant
+-- STAFF_DEFAULT_PIN) using the Node helper — do not paste plaintext PINs here.
+--
+-- From backend/ (point .env / PG* at the target database first):
+--   node scripts/reset-all-staff-pins.mjs
+--
+-- After reset, users sign in with the default PIN and are forced to set a new one.
+-- Default PIN is shown only on Admin → Staff → Reset PIN.

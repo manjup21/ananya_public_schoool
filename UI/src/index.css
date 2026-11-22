@@ -1,0 +1,29 @@
+@import "tailwindcss";
+
+/* App update popup: fills quickly, then waits near the end until the page reloads */
+@keyframes app-update-progress {
+  from { transform: scaleX(0.05); }
+  to { transform: scaleX(0.9); }
+}
+
+/* react-datepicker alignment fixes within dialogs/forms */
+.react-datepicker-wrapper,
+.react-datepicker__input-container {
+  width: 100%;
+}
+
+/* Ensure the popper anchors to the input's left edge */
+.react-datepicker-popper {
+  z-index: 60;
+}
+
+/* withPortal calendar must sit above dialog overlay (z-50) */
+.react-datepicker__portal {
+  z-index: 70;
+}
+
+.react-datepicker-popper[data-placement^='bottom-start'] .react-datepicker__triangle,
+.react-datepicker-popper[data-placement^='top-start'] .react-datepicker__triangle {
+  left: 1.25rem;
+  right: auto;
+}
